@@ -1,0 +1,1 @@
+I do not collect, store nor share user data.
