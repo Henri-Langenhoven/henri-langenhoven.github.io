@@ -1076,5 +1076,91 @@ body .markdown-body
 .highlight .vi{color:teal}
 .highlight .il{color:#009999}
 .highlight .gc{color:#999;background-color:#EAF2F5}
-</style><title>index</title></head><body><article class="markdown-body"><h1 id="things">Things<a class="headerlink" href="#things" title="Permanent link"></a></h1>
-<h2 id="flutter-things"><a href="things/flutter/flutter%20things.html">Flutter Things</a><a class="headerlink" href="#flutter-things" title="Permanent link"></a></h2></article></body></html>
+</style><title>deep linking</title></head><body><article class="markdown-body"><h1 id="android-app-links">Android App Links<a class="headerlink" href="#android-app-links" title="Permanent link"></a></h1>
+<ul>
+<li><a href="https://developer.android.com/training/app-links">App Links</a></li>
+<li><a href="https://developer.android.com/training/app-links/deep-linking">Deep Links</a></li>
+<li><a href="https://developer.android.com/training/app-links/verify-android-applinks">Verify App Links (assetlinks.json)</a></li>
+<li><a href="https://developers.google.com/digital-asset-links/v1/create-statement">Creating a Statement List (assetlinks.json)</a></li>
+</ul>
+<h1 id="ios-universal-links">iOS Universal Links<a class="headerlink" href="#ios-universal-links" title="Permanent link"></a></h1>
+<ul>
+<li><a href="https://developer.apple.com/documentation/xcode/allowing-apps-and-websites-to-link-to-your-content">Universal Links</a></li>
+<li><a href="https://developer.apple.com/documentation/xcode/supporting-universal-links-in-your-app">Supporting Universal Links in your App</a></li>
+<li><a href="https://developer.apple.com/documentation/xcode/supporting-associated-domains">Associated Domains</a></li>
+<li><a href="https://developer.apple.com/documentation/bundleresources/entitlements/com_apple_developer_associated-domains">Associated Domains Entitlement</a></li>
+</ul>
+<h1 id="flutter">Flutter<a class="headerlink" href="#flutter" title="Permanent link"></a></h1>
+<ul>
+<li><a href="https://docs.flutter.dev/ui/navigation/deep-linking">Deep Linking</a></li>
+<li><a href="https://docs.flutter.dev/cookbook/navigation/set-up-app-links">Android - App Links</a></li>
+<li><a href="https://docs.flutter.dev/cookbook/navigation/set-up-universal-links">iOS - Universal Links</a></li>
+<li><a href="https://pub.dev/packages/app_links">app_links pub.dev package</a></li>
+</ul>
+<h1 id="appendices">Appendices<a class="headerlink" href="#appendices" title="Permanent link"></a></h1>
+<h2 id="a-sample-assetlinksjson">A - Sample <a href="https://vitalityfidelidade.page.link/.well-known/assetlinks.json">assetlinks.json</a><a class="headerlink" href="#a-sample-assetlinksjson" title="Permanent link"></a></h2>
+<div class="highlight"><pre><span class="p">[</span>
+    <span class="p">{</span>
+        <span class="nt">&quot;relation&quot;</span><span class="p">:</span>
+        <span class="p">[</span>
+            <span class="s2">&quot;delegate_permission/common.handle_all_urls&quot;</span>
+        <span class="p">],</span>
+        <span class="nt">&quot;target&quot;</span><span class="p">:</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;namespace&quot;</span><span class="p">:</span> <span class="s2">&quot;android_app&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;package_name&quot;</span><span class="p">:</span> <span class="s2">&quot;pt.fidelidade.b2c.vitality&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;sha256_cert_fingerprints&quot;</span><span class="p">:</span>
+            <span class="p">[</span>
+                <span class="s2">&quot;BB:F5:EA:EA:2D:5C:82:A0:BB:DA:CC:1D:66:48:F8:81:CD:D2:63:0E:F6:94:32:AA:A0:7D:75:0A:EF:64:DC:07&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;AC:11:5E:54:EC:CF:0E:89:DB:25:BE:97:95:87:11:C0:E0:49:73:59:BC:C1:49:D7:BE:32:F3:25:57:F6:B2:89&quot;</span>
+            <span class="p">]</span>
+        <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="nt">&quot;relation&quot;</span><span class="p">:</span>
+        <span class="p">[</span>
+            <span class="s2">&quot;delegate_permission/common.handle_all_urls&quot;</span>
+        <span class="p">],</span>
+        <span class="nt">&quot;target&quot;</span><span class="p">:</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;namespace&quot;</span><span class="p">:</span> <span class="s2">&quot;android_app&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;package_name&quot;</span><span class="p">:</span> <span class="s2">&quot;pt.fidelidade.b2c.vitality.debuggable&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;sha256_cert_fingerprints&quot;</span><span class="p">:</span>
+            <span class="p">[</span>
+                <span class="s2">&quot;BB:F5:EA:EA:2D:5C:82:A0:BB:DA:CC:1D:66:48:F8:81:CD:D2:63:0E:F6:94:32:AA:A0:7D:75:0A:EF:64:DC:07&quot;</span>
+            <span class="p">]</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+
+<h2 id="b-sample-apple-app-site-association">B - Sample <a href="https://vitalityfidelidade.page.link/.well-known/apple-app-site-association">apple-app-site-association</a><a class="headerlink" href="#b-sample-apple-app-site-association" title="Permanent link"></a></h2>
+<div class="highlight"><pre><span class="p">{</span>
+    <span class="nt">&quot;applinks&quot;</span><span class="p">:</span>
+    <span class="p">{</span>
+        <span class="nt">&quot;apps&quot;</span><span class="p">:</span>
+        <span class="p">[],</span>
+        <span class="nt">&quot;details&quot;</span><span class="p">:</span>
+        <span class="p">[</span>
+            <span class="p">{</span>
+                <span class="nt">&quot;appID&quot;</span><span class="p">:</span> <span class="s2">&quot;ADB4VEHB8A.pt.fidelidade.b2c.vitality&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;paths&quot;</span><span class="p">:</span>
+                <span class="p">[</span>
+                    <span class="s2">&quot;NOT /_/*&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;/*&quot;</span>
+                <span class="p">]</span>
+            <span class="p">}</span>
+        <span class="p">]</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+<h2 id="c-sample-android-intent-filter">C - Sample Android intent-filter<a class="headerlink" href="#c-sample-android-intent-filter" title="Permanent link"></a></h2>
+<div class="highlight"><pre><span class="nt">&lt;intent-filter</span> <span class="na">android:autoVerify=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;action</span> <span class="na">android:name=</span><span class="s">&quot;android.intent.action.VIEW&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;category</span> <span class="na">android:name=</span><span class="s">&quot;android.intent.category.DEFAULT&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;category</span> <span class="na">android:name=</span><span class="s">&quot;android.intent.category.BROWSABLE&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;data</span> <span class="na">android:scheme=</span><span class="s">&quot;https&quot;</span> <span class="na">android:host=</span><span class="s">&quot;vitalityshop.asr.nl&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;data</span> <span class="na">android:scheme=</span><span class="s">&quot;https&quot;</span> <span class="na">android:host=</span><span class="s">&quot;asr.ecommerce.test3.sparco.nl&quot;</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/intent-filter&gt;</span>
+</pre></div></article></body></html>
