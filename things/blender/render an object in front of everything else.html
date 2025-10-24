@@ -16,18 +16,44 @@
     <p>I had the same problem as <a
         href="https://blender.stackexchange.com/questions/196821/how-to-render-object-in-front-of-everything-else">this
         StackExchange post</a>, and the one and only answer at the time of writing suggested making a new scene. I tried
-      that at first, but it seemed to add unnecessary complexity and I got confused. Then I read the comments, and this
+      that at first, but it seemed to add unnecessary complexity and I got confused. Then I read the comments, and
       <a
-        href="https://blender.stackexchange.com/questions/196821/how-to-render-object-in-front-of-everything-else#comment330043_196822">comment</a>,
+        href="https://blender.stackexchange.com/questions/196821/how-to-render-object-in-front-of-everything-else#comment330043_196822">this
+        comment</a>,
       suggested making a separate view layer instead. I looked up the <a
         href="https://docs.blender.org/manual/en/4.5/render/layers/introduction.html">documentation on view layers</a>,
       and tried going with that solution. Because the comment didn't include steps though, I was still floundering
       around, until I looked at the <a href="https://blender.stackexchange.com/a/196822">answer</a> again, and happened
-      to see what looked like "view layers" in one of the <a href="https://i.sstatic.net/b3sQs.png">images</a>. So I
-      investigated the "<a href="https://docs.blender.org/manual/en/4.5/compositing/introduction.html">Compositor</a>,"
+      to see what looked like "view layers" in one of the <a
+        href="https://blender.stackexchange.com/questions/196821/how-to-render-object-in-front-of-everything-else/196822#comment330043_196822:~:text=Share-,Improve%20this%20answer,-Follow">images</a>.
+      So I investigated the "<a
+        href="https://docs.blender.org/manual/en/4.5/compositing/introduction.html">Compositor</a>,"
       combined the two suggestions, and voilà!
     </p>
     <p>Without further ado, let's crunch the numbers:</p>
+
+    <h3>1. Make a new "View Layer"</h3>
+
+    <p>Click the button that looks like a copy icon (highlighted in the image below) top right above the Outliner (the
+      scene view hierarchy thingy).</p>
+
+    <img
+      src="https://henri-langenhoven.github.io/things/blender/render%20an%20object%20in%20front%20of%20everything%20else/new%20view%20layer.jpg"
+      alt="new view layer" />
+
+    <h3>2. Make the background transparent</h3>
+
+    <p>This step is non-obvious and probably would have tripped me up, but thankfully I remembered something about
+      transparency in the StackExchange
+      <a
+        href="https://blender.stackexchange.com/questions/196821/how-to-render-object-in-front-of-everything-else#:~:text=The%20robot%20scene%20should%20have%20a%20transparent%20background%20(Select%20Film%20Transparent%20in%20the%20Rendering%20Properties%20menu).">answer</a>.
+      It was in relation to multiple scenes but turns out it's still necessary for view layers. Click on the old-school
+      camera icon in the right sidebar, scroll down to Film, expand it, then check the "Transparent" box.
+    </p>
+
+    <img
+      src="https://henri-langenhoven.github.io/things/blender/render%20an%20object%20in%20front%20of%20everything%20else/render%20-%20film%20-%20transparent.jpg"
+      alt="render - film - transparent" />
   </article>
 </body>
 
