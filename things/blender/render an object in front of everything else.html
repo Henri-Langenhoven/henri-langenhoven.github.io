@@ -40,7 +40,7 @@
 
     <img
       src="https://henri-langenhoven.github.io/things/blender/render%20an%20object%20in%20front%20of%20everything%20else/new%20view%20layer.jpg"
-      alt="New view layer" />
+      alt="New view layer" width="384" height="114" />
 
     <h3 id="make-the-background-transparent">2. Make the background transparent<a class="headerlink"
         href="#make-the-background-transparent" title="Permanent link"></a></h3>
@@ -56,7 +56,7 @@
 
     <img
       src="https://henri-langenhoven.github.io/things/blender/render%20an%20object%20in%20front%20of%20everything%20else/render%20-%20film%20-%20transparent.jpg"
-      alt="Render - Film - Transparent" />
+      alt="Render - Film - Transparent" width="533" height="529" />
 
     <h3 id="make-a-new-collection">3. Make a new "Collection"<a class="headerlink" href="#make-a-new-collection"
         title="Permanent link"></a></h3>
@@ -66,7 +66,7 @@
 
     <img
       src="https://henri-langenhoven.github.io/things/blender/render%20an%20object%20in%20front%20of%20everything%20else/new%20collection.jpg"
-      alt="New collection" />
+      alt="New collection" width="506" height="114" />
 
     <h3 id="rearrange-your-scene">4. Rearrange your scene<a class="headerlink" href="#rearrange-your-scene"
         title="Permanent link"></a></h3>
@@ -75,12 +75,12 @@
       scene. E.g. I wanted a cube in the below image to render over the rest of the scene, so I put it in its own
       collection. I linked the "Sun" from the other collection because I also wanted the front cube to be lit. Notice
       the "Sun" is highlighted in both collections (to link an object to another collection, start dragging it to the
-      other collection, then while holding down the mouse, press Ctrl, then release the mouse over the desired
-      collection).</p>
+      other collection, then <i>while</i> holding down the mouse (<i>not before</i>), press and hold down Ctrl, then
+      release the mouse over the desired collection).</p>
 
     <img
       src="https://henri-langenhoven.github.io/things/blender/render%20an%20object%20in%20front%20of%20everything%20else/rearrange%20your%20scene.jpg"
-      alt="Rearrange your scene" />
+      alt="Rearrange your scene" width="325" height="302" />
 
     <h3 id="poke-around-exclude-the-collections-you-dont-want-in-each-view-layer">5. <s>Poke around</s> Exclude the
       collections you don't want in each view layer<a class="headerlink"
@@ -101,10 +101,36 @@
           layer name (highlighted in the image below). Then click the one you want to switch to.</p>
         <img
           src="https://henri-langenhoven.github.io/things/blender/render%20an%20object%20in%20front%20of%20everything%20else/select%20different%20view%20layer.jpg"
-          alt="Select a different view layer" />
+          alt="Select a different view layer" width="398" height="168" />
+      </li>
+      <li>
+        <p>Deselect the collections you don't want included in your currently selected view layer (rename a view layer
+          by clicking its name).</p>
+        <img
+          src="https://henri-langenhoven.github.io/things/blender/render%20an%20object%20in%20front%20of%20everything%20else/uncheck%20collections%20you%20don't%20want.jpg"
+          alt="Example of the background collection" width="394" height="320" />
+        <img
+          src="https://henri-langenhoven.github.io/things/blender/render%20an%20object%20in%20front%20of%20everything%20else/uncheck%20collections%20you%20don't%20want%202.jpg"
+          alt="Example of the foreground collection" width="333" height="159" />
       </li>
     </ol>
 
+    <h3 id="now-what-combine-the-two-view-layers-using-the-compositor">6. <s>Now what?</s> Combine the two view layers
+      using the "Compositor"<a class="headerlink" href="#now-what-combine-the-two-view-layers-using-the-compositor"
+        title="Permanent link"></a></h3>
+    <p>I had to poke around quite a bit here, because the StackExchange answer is more than five years old at the time
+      of writing, and quite a lot has changed in the Compositor between Blender 2.8'ish and the version I'm using
+      (4.5.2).</p>
+    <p>For posterity, I've documented my floundering here:
+    <ul>
+      <li>Initially, I made a Utilities&gt;Mix node, wired it up and left the defaults. That kind-of worked, until I
+        realised materials weren't showing up.</li>
+      <li>Then I saw the Mix node had a drop-down next to "Float," so I chose "Color," which seemed to fix the material
+        issue.</li>
+      <li>Then I 🥁 <a href="https://docs.blender.org/manual/en/4.5/compositing/types/color/mix/alpha_over.html">read
+          the docs</a></li>
+    </ul>
+    </p>
   </article>
 </body>
 
