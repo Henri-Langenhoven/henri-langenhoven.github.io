@@ -36,11 +36,11 @@
         title="Permanent link"></a></h3>
 
     <p>Click the button that looks like a copy icon (highlighted in the image below) top right above the Outliner (the
-      scene view hierarchy thingy).</p>
+      scene view hierarchy thingy top right).</p>
 
     <img
       src="https://henri-langenhoven.github.io/things/blender/render%20an%20object%20in%20front%20of%20everything%20else/new%20view%20layer.jpg"
-      alt="new view layer" />
+      alt="New view layer" />
 
     <h3 id="make-the-background-transparent">2. Make the background transparent<a class="headerlink"
         href="#make-the-background-transparent" title="Permanent link"></a></h3>
@@ -49,13 +49,62 @@
       transparency in the StackExchange
       <a
         href="https://blender.stackexchange.com/questions/196821/how-to-render-object-in-front-of-everything-else#:~:text=The%20robot%20scene%20should%20have%20a%20transparent%20background%20(Select%20Film%20Transparent%20in%20the%20Rendering%20Properties%20menu).">answer</a>.
-      It was in relation to multiple scenes but turns out it's still necessary for view layers. Click on the old-school
-      camera icon in the right sidebar, scroll down to Film, expand it, then check the "Transparent" box.
+      It was in relation to multiple scenes but turns out it's still necessary for view layers. Click on "Render" (the
+      old-school
+      camera icon) in the right sidebar, scroll down to "Film," expand it, then check the "Transparent" box.
     </p>
 
     <img
       src="https://henri-langenhoven.github.io/things/blender/render%20an%20object%20in%20front%20of%20everything%20else/render%20-%20film%20-%20transparent.jpg"
-      alt="render - film - transparent" />
+      alt="Render - Film - Transparent" />
+
+    <h3 id="make-a-new-collection">3. Make a new "Collection"<a class="headerlink" href="#make-a-new-collection"
+        title="Permanent link"></a></h3>
+
+    <p>Right-click the "Scene Collection" in the Outliner (the scene view hierarchy thingy top right). Then choose "New
+      Collection". To rename a collection, double-click its name in the Outliner.</p>
+
+    <img
+      src="https://henri-langenhoven.github.io/things/blender/render%20an%20object%20in%20front%20of%20everything%20else/new%20collection.jpg"
+      alt="New collection" />
+
+    <h3 id="rearrange-your-scene">4. Rearrange your scene<a class="headerlink" href="#rearrange-your-scene"
+        title="Permanent link"></a></h3>
+
+    <p>Put the object(s) you want to show in front of everything else in a separate collection from the rest of your
+      scene. E.g. I wanted a cube in the below image to render over the rest of the scene, so I put it in its own
+      collection. I linked the "Sun" from the other collection because I also wanted the front cube to be lit. Notice
+      the "Sun" is highlighted in both collections (to link an object to another collection, start dragging it to the
+      other collection, then while holding down the mouse, press Ctrl, then release the mouse over the desired
+      collection).</p>
+
+    <img
+      src="https://henri-langenhoven.github.io/things/blender/render%20an%20object%20in%20front%20of%20everything%20else/rearrange%20your%20scene.jpg"
+      alt="Rearrange your scene" />
+
+    <h3 id="poke-around-exclude-the-collections-you-dont-want-in-each-view-layer">5. <s>Poke around</s> Exclude the
+      collections you don't want in each view layer<a class="headerlink"
+        href="#poke-around-exclude-the-collections-you-dont-want-in-each-view-layer" title="Permanent link"></a></h3>
+
+    <p>This and subsequent steps took the longest, because the
+      <a
+        href="https://blender.stackexchange.com/questions/196821/how-to-render-object-in-front-of-everything-else#comment330043_196822">comment</a>
+      was very sparse on details. After a bit of
+      <a href="https://docs.blender.org/manual/en/4.5/render/layers/introduction.html#usage">reading</a> and poking
+      around in Blender, I figured it out though. Basically you need to deselect all the collections you don't want in
+      each view layer. The key thing is making sure the correct view layer is selected while you do this.
+    </p>
+
+    <ol>
+      <li>
+        <p>Select a different view layer by clicking the button with the "stack of images" icon to the left of the view
+          layer name (highlighted in the image below). Then click the one you want to switch to.</p>
+        <img
+          src="https://henri-langenhoven.github.io/things/blender/render%20an%20object%20in%20front%20of%20everything%20else/select%20different%20view%20layer.jpg"
+          alt="Select a different view layer" />
+      </li>
+    </ol>
+
   </article>
 </body>
 
