@@ -127,10 +127,89 @@
         realised materials weren't showing up.</li>
       <li>Then I saw the Mix node had a drop-down next to "Float," so I chose "Color," which seemed to fix the material
         issue.</li>
-      <li>Then I 🥁 <a href="https://docs.blender.org/manual/en/4.5/compositing/types/color/mix/alpha_over.html">read
-          the docs</a></li>
+      <li>Then I <a href="https://docs.blender.org/manual/en/4.5/compositing/types/color/mix/alpha_over.html">read
+          the docs</a> 🥁</li>
     </ul>
     </p>
+    <h3 id="the-right-way">The "right way" to do it<a class="headerlink" href="#the-right-way"
+        title="Permanent link"></a></h3>
+    <p>I think using the <a
+        href="https://docs.blender.org/manual/en/4.5/compositing/types/color/mix/alpha_over.html">Alpha Over</a> node is
+      probably the closest to the "right way" to do it, so that's the one I present as the solution.</p>
+
+    <ol>
+      <li>
+        <p>Open a new editor window or change an existing one to a "Compositor" window. Newer versions of Blender have
+          nice workflow presets, so I just chose the "Compositing" workflow.</p>
+        <p>Then click "Use Nodes." You might get some pre-generated nodes. Just delete them.</p>
+        <img
+          src="https://henri-langenhoven.github.io/things/blender/render%20an%20object%20in%20front%20of%20everything%20else/compositor.jpg"
+          alt="Steps to open a compositor window" width="335" height="200" />
+      </li>
+      <li>
+        <p>Click the "Add" button (or right-click anywhere in the window), navigate to "Input," then "Scene," then click
+          "Render Layers."</p>
+        <img
+          src="https://henri-langenhoven.github.io/things/blender/render%20an%20object%20in%20front%20of%20everything%20else/render%20layers.jpg"
+          alt="Steps to make a Render Layers node" width="700" height="402" />
+        <p>On the "Render Layers" node, click the drop-down under "Scene" and choose the background view layer you
+          made earlier.</p>
+        <p>Then make another "Render Layers" node, and set it to your foreground view layer.</p>
+        <img
+          src="https://henri-langenhoven.github.io/things/blender/render%20an%20object%20in%20front%20of%20everything%20else/two%20render%20layers.jpg"
+          alt="The two Render Layers nodes" width="271" height="317" />
+      </li>
+      <li>
+        <p>Click "Add," navigate to "Color," then "Mix," then click "Alpha Over."</p>
+        <img
+          src="https://henri-langenhoven.github.io/things/blender/render%20an%20object%20in%20front%20of%20everything%20else/alpha%20over.jpg"
+          alt="Steps to make an Alpha Over node" width="700" height="129" />
+      </li>
+      <li>
+        <p>Click "Add," navigate to "Output," then click "Composite."</p>
+        <img
+          src="https://henri-langenhoven.github.io/things/blender/render%20an%20object%20in%20front%20of%20everything%20else/composite.jpg"
+          alt="Steps to make a Composite node" width="695" height="117" />
+      </li>
+      <li>
+        <p>Connect the <i>background</i> Render Layers node's Image output to the Alpha Over node's <i>top</i> Image
+          input (click, drag, release).</p>
+        <img
+          src="https://henri-langenhoven.github.io/things/blender/render%20an%20object%20in%20front%20of%20everything%20else/bottom%20to%20top.jpg"
+          alt="Connect background render layer to top image" width="504" height="371" />
+      </li>
+      <li>
+        <p>Connect the <i>foreground</i> Render Layers node's Image output to the Alpha Over node's <i>bottom</i> Image
+          input (click, drag, release).</p>
+        <img
+          src="https://henri-langenhoven.github.io/things/blender/render%20an%20object%20in%20front%20of%20everything%20else/top%20to%20bottom.jpg"
+          alt="Connect foreground render layer to bottom image" width="506" height="377" />
+      </li>
+      <li>
+        <p>Connect the <i>foreground</i> Render Layers node's Alpha output to the Alpha Over node's Fac input (click,
+          drag, release).</p>
+        <img
+          src="https://henri-langenhoven.github.io/things/blender/render%20an%20object%20in%20front%20of%20everything%20else/alpha%20to%20fac.jpg"
+          alt="Connect foreground render layer alpha to Fac" width="495" height="362" />
+      </li>
+      <li>
+        <p>And finally, connect the Alpha Over node's Image output to the Composite node's Image input.</p>
+        <img
+          src="https://henri-langenhoven.github.io/things/blender/render%20an%20object%20in%20front%20of%20everything%20else/alpha%20over%20and%20out.jpg"
+          alt="Connect alpha over to composite" width="700" height="358" />
+      </li>
+    </ol>
+
+    <h3 id="success">Success!<a class="headerlink" href="#success" title="Permanent link"></a></h3>
+    <p>Press F12 or click on "Render," then "Render Image" and enjoy!
+      <img
+        src="https://henri-langenhoven.github.io/things/blender/render%20an%20object%20in%20front%20of%20everything%20else/mhm%20yeah.jpg"
+        alt="How to render" width="198" height="171" />
+    </p>
+    <img
+      src="https://henri-langenhoven.github.io/things/blender/render%20an%20object%20in%20front%20of%20everything%20else/success.jpg"
+      alt="Success" width="700" height="368" />
+    <p>Alright, back to it then.</p>
   </article>
 </body>
 
