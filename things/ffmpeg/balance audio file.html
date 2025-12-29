@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" >
+    <link rel="stylesheet" href="//henri-langenhoven.github.io/things/stylesheet.css" />
+    <link rel="stylesheet" href="//henri-langenhoven.github.io/things/github.css" />
+    <title>Using ffmpeg to balance an audio file's volume in three easy steps</title>
+</head>
+
+<body>
+    <article class="markdown-body">
+    <h1 id="using-ffmpeg-to-balance-an-audio-files-volume-in-three-easy-steps">Using ffmpeg to balance an audio file's volume in three easy steps<a
+        class="headerlink" href="#using-ffmpeg-to-balance-an-audio-files-volume-in-three-easy-steps" title="Permanent link"></a></h1>
+    <div style="margin-bottom: 8px; color: #757575;">Published on 29 December 2025</div>
+    <h3 id="step-1">Step 1<a class="headerlink" href="#step-1" title="Permanent link"></a></h3>
+        <p>Use <code>volumedetect</code> command to figure out by how much the volume should be adjusted.
+        <div class="highlight"><pre>ffmpeg -i file.mp3 -af <span class="s2">&quot;volumedetect&quot;</span> -vn -sn -dn -f null -
+        </pre></div></p>
+        <h3 id="step-2">Step 2<a class="headerlink" href="#step-2" title="Permanent link"></a></h3>
+        <p>Analyse the &ldquo;histogram_&lt;5&gt;db&rdquo; lines in the output to decide how many decibels result in acceptable <a href="https://en.wikipedia.org/wiki/Clipping_(audio)">clipping</a>.</p>
+        <p>Generally, a safe amount is the inverse of the <code>max_volume</code>, i.e. about 5 dB in the below example.
+        <div class="highlight"><pre><span class="o">[</span>Parsed_volumedetect_0 @ 000002484fb5dd00<span class="o">]</span> n_samples: 298470
+            <span class="o">[</span>Parsed_volumedetect_0 @ 000002484fb5dd00<span class="o">]</span> mean_volume: -19.9 dB
+            <span class="o">[</span>Parsed_volumedetect_0 @ 000002484fb5dd00<span class="o">]</span> max_volume: -5.3 dB
+            <span class="o">[</span>Parsed_volumedetect_0 @ 000002484fb5dd00<span class="o">]</span> histogram_5db: 44
+            <span class="o">[</span>Parsed_volumedetect_0 @ 000002484fb5dd00<span class="o">]</span> histogram_6db: 236
+            <span class="o">[</span>Parsed_volumedetect_0 @ 000002484fb5dd00<span class="o">]</span> histogram_7db: 720
+        </pre></div></p>
+        <h3 id="step-3">Step 3<a class="headerlink" href="#step-3" title="Permanent link"></a></h3>
+        <p>Finally, increase the volume with the <code>volume filter</code> command.
+        <div class="highlight"><pre>ffmpeg -i file.mp3 -af <span class="s2">&quot;volume=5.0dB&quot;</span> file_louder.mp3
+        </pre></div></p>
+    </article>
+</body>
+</html>
+
